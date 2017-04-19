@@ -16,4 +16,13 @@ public class ShirtModel extends ProductModel {
 	public void shirtSize(String input){
 		size.equals(input); 
 	}
+	
+	public void setShirtName(String input){
+		shirtName.equals(input);
+	}
+	
+	public void setShirtDesc(String input){
+		shirtDescription.equals(input);
+	}
+	
 }
