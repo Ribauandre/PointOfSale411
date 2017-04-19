@@ -1,22 +1,23 @@
 package logic;
 
 public class PantModel extends ProductModel {
-	
+
 	String pantDescription;
 	String pantName;
-	int waistSize;
-	int pantLength;
-	
-	public PantModel(String prodName, String prodD, double price, double code) {
-		super(prodName, prodD, price, code);
-		pantDescription = prodD;
-		pantName = prodName; 
+	String pantSize;
+
+	public PantModel(String prodName, String prodD, double price, double code, int amountInv) {
+		super(prodName, prodD, price, code, amountInv);
+		pantName = prodName;
+		pantDescription = prodD; 
+		
 	}
+
 	
 	
-	public void pantSize(int waist, int length){
-		waist = this.waistSize;
-		length = this.pantLength; 
+	public void pantSize(String input){
+		input = this.pantSize;
+		
 	}
 
 	public void setName(String input){
@@ -47,24 +48,7 @@ public class PantModel extends ProductModel {
 	}
 
 
-	public int getWaistSize() {
-		return waistSize;
-	}
 
-
-	public void setWaistSize(int waistSize) {
-		this.waistSize = waistSize;
-	}
-
-
-	public int getPantLength() {
-		return pantLength;
-	}
-
-
-	public void setPantLength(int pantLength) {
-		this.pantLength = pantLength;
-	}
 	
 	
 	

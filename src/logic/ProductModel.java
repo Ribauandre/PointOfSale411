@@ -5,16 +5,26 @@ String name;
 String productDesc; 
 double cost;
 double iD;
+int quantity;
 
-	public ProductModel(String prodName, String prodD, double price, double code){
+	public ProductModel(String prodName, String prodD, double price, double code, int amountInv){
 		prodName = this.name;
 		prodD = this.productDesc;
 		price = this.cost;
-		code = this.iD; 
+		code = this.iD;
+		amountInv = quantity;
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public void setName(String name) {

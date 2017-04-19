@@ -2,19 +2,21 @@ package logic;
 
 public class ShirtModel extends ProductModel {
 
-	String size; 
+	String shirtSize; 
 	String shirtDescription;
 	String shirtName;
-
-	public ShirtModel(String prodName, String prodD, double price, double code) {
-		super(prodName, prodD, price, code);
-		shirtDescription = prodD;
+	
+	public ShirtModel(String prodName, String prodD, double price, double code, int amountInv) {
+		super(prodName, prodD, price, code, amountInv);
+		
 		shirtName = prodName;
+		shirtDescription = prodD;
 	}
+
 
 	
 	public void shirtSize(String input){
-		size.equals(input); 
+		shirtSize.equals(input); 
 	}
 	
 	public void setShirtName(String input){
