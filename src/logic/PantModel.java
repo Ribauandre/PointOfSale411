@@ -19,6 +19,13 @@ public class PantModel extends ProductModel {
 		length = this.pantLength; 
 	}
 
+	public void setName(String input){
+		pantName.equals(input);
+	}
+	
+	public void setDescription(String input){
+		pantDescription.equals(input);
+	}
 
 	public String getPantDescription() {
 		return pantDescription;
