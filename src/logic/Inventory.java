@@ -1,5 +1,6 @@
 package logic;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Inventory extends ProductModel {
@@ -26,5 +27,14 @@ public class Inventory extends ProductModel {
 	return newItem; 
 	
 	}
+	
+	 static ArrayList<ProductModel> inventory = new ArrayList();
+	    
+	    public static void returnItem(ProductModel itemBack) {
+	        inventory.add(itemBack);
+	        System.out.println("you have been refunded "+itemBack.cost+" dollars");
+	    
+	    }
+
 
 }

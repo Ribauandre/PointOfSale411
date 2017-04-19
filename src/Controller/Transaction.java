@@ -1,5 +1,9 @@
 package Controller;
 
-public class Transaction {
+public abstract class Transaction implements Runnable {
+	
+	    public Transaction (){
+	    	
+	    }
 
 }
