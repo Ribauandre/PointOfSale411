@@ -12,7 +12,7 @@ public class Return extends Transaction {
 
 @Override
 	public void run() {
-		//Inventory.add(itemBack);
+		Inventory.inventory.add(itemBack);
 		System.out.println("you have been refunded "+itemBack.cost+" dollars");
 	}
 
