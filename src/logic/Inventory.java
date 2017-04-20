@@ -28,7 +28,7 @@ public class Inventory extends ProductModel {
 	
 	}
 	
-	 static ArrayList<ProductModel> inventory = new ArrayList();
+	  static ArrayList<ProductModel> inventory = new ArrayList();
 	    
 	    public static void returnItem(ProductModel itemBack) {
 	        inventory.add(itemBack);

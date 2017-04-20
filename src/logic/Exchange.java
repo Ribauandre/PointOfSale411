@@ -1,6 +1,7 @@
 package logic;
 
 import Controller.Transaction;
+import logic.Inventory;
 
 public class Exchange extends Transaction {
 	 ProductModel itemBack;
@@ -18,11 +19,11 @@ public class Exchange extends Transaction {
 	    @Override
 	    public void run() {
 	        
-	       for (int i = 0; i < Inventory.sizd(); i++) {
-	            synchronized(Inventory) {
-	            if (Inventory.get(i).iD == itemTo.iD) {
-	                Inventory.add(itemBack);
-	                Inventory.remove(i);
+	       for (int i = 0; i < Inventory.inventory.size(); i++) {
+	            synchronized(Inventory.inventory) {
+	            if (Inventory.inventory.get(i).iD == itemTo.iD) {
+	                Inventory.inventory.add(itemBack);
+	                Inventory.inventory.remove(i);
 	            }
 
 	            } 
