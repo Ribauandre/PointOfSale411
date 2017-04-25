@@ -48,12 +48,15 @@ import logic.Person;
 
 public class NavigationController implements Initializable{
 
-	// Budget
-	// Account View
+
 	@FXML
 	public static Button logButton;
 	@FXML
 	public ListView<String> products;
+	@FXML
+    private DialogPane discrip;
+	@FXML
+	private DialogPane stock;
 	
 
 	public static Person loginP = new Person(LoginModel.name, LoginModel.last, LoginModel.user, LoginModel.pass);
@@ -76,7 +79,7 @@ public class NavigationController implements Initializable{
 			
 			for(int i = 0; i< Inventory.inventory.size(); i++){
 				items.add(Inventory.inventory.get(i).getName());
-				System.out.println(Inventory.inventory.get(i).getName());
+				
 			}
 			
 			
@@ -88,6 +91,20 @@ public class NavigationController implements Initializable{
 			        	
 		
 			        	if(newValue.equals(Inventory.inventory.get(i).getName())){
+			        		String dis = Inventory.inventory.get(i).getProductDesc();
+			        		discrip.setContentText(dis);
+			        		if(Inventory.inventory.get(i).getQuantity() == 0 ){
+			        			stock.setContentText("OUT OF STOCK");
+				
+			        		}
+			        		if(Inventory.inventory.get(i).getQuantity() > 0){
+			        			int stk = Inventory.inventory.get(i).getQuantity();
+			        			stock.setContentText(""+stk);
+			        		}
+			        		if(addToCartClick()){
+			        			
+			        		}
+			        			
 			        		
 			        
 			        	}
@@ -109,7 +126,10 @@ public class NavigationController implements Initializable{
 	public void accountClick(){
 		Main.showAccount();
 	}
-	
+	public boolean addToCartClick(){
+		boolean isClicked = false;
+		return isClicked = true;
+	}
 
 
 	

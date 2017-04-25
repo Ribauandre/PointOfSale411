@@ -65,7 +65,8 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="183.0">
                      <children>
-                        <DialogPane headerText="Product description:" layoutX="6.0" layoutY="8.0" prefHeight="329.0" prefWidth="360.0" />
+                        <DialogPane fx:id="discrip" expanded="true" headerText="Product description:" layoutX="6.0" layoutY="8.0" prefHeight="253.0" prefWidth="360.0" />
+                        <DialogPane fx:id="stock" headerText="Stock:" layoutX="6.0" layoutY="267.0" />
                      </children></AnchorPane>
               </items>
             </SplitPane>
