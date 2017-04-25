@@ -5,10 +5,9 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DialogPane?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -23,7 +22,7 @@
                <children>
                   <Text fill="#d3a93d" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IST 411 POS" wrappingWidth="167.01309967041016">
                      <font>
-                        <Font name="Impact" size="24.0" />
+                        <Font name="Damascus Regular" size="24.0" />
                      </font>
                   </Text>
                   <Text fx:id="accountName" layoutX="273.0" layoutY="30.0" onDragDetected="#accountClick" onMouseClicked="#accountClick" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.0" text="Null user" textAlignment="RIGHT" wrappingWidth="184.21875">
@@ -34,50 +33,47 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Text>
-                  <Button fx:id="logButton" layoutX="470.0" layoutY="10.0" mnemonicParsing="false" onAction="#handelLogout" text="Logout">
-                     <effect>
-                        <SepiaTone level="0.18" />
-                     </effect>
-                  </Button>
+                  <Button fx:id="logButton" layoutX="470.0" layoutY="10.0" mnemonicParsing="false" onAction="#handelLogout" text="Logout" />
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
         </items>
       </SplitPane>
-      <Pane fx:id="budget" layoutX="4.0" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="543.0">
+      <Pane fx:id="budget" layoutX="4.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="543.0">
          <children>
             <ToolBar layoutX="-4.0" layoutY="402.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="547.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <items>
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="224.0" text="Add To Cart" />
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="303.0" text="Checkout" />
+                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="247.0" text="Add To Cart" />
+                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="282.0" text="Checkout" />
                </items>
             </ToolBar>
+            <Text fill="#2cc90d" layoutX="461.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="67.2187470793724">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="417.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" />
             <Accordion layoutX="14.0" layoutY="86.0" />
-            <SplitPane dividerPositions="0.29797979797979796" layoutX="2.0" layoutY="60.0" prefHeight="347.0" prefWidth="536.0">
+            <SplitPane dividerPositions="0.29797979797979796" layoutX="2.0" layoutY="64.0" prefHeight="343.0" prefWidth="536.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="182.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="94.0">
                      <children>
-                        <ScrollPane prefHeight="345.0" prefWidth="155.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                          </content>
-                        </ScrollPane>
-                     </children></AnchorPane>
+                        <ListView fx:id="products" layoutY="-1.0" prefHeight="341.0" prefWidth="155.0" />
+                     </children>
+                  </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="183.0">
                      <children>
-                        <DialogPane headerText="Product Description:" layoutX="6.0" layoutY="14.0" prefHeight="325.0" prefWidth="360.0" />
+                        <DialogPane headerText="Product description:" layoutX="6.0" layoutY="8.0" prefHeight="329.0" prefWidth="360.0" />
                      </children></AnchorPane>
               </items>
             </SplitPane>
-            <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POS Inventory" wrappingWidth="184.21875216066837">
+            <Text layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POS Inventory">
                <font>
-                  <Font size="26.0" />
+                  <Font size="25.0" />
                </font>
             </Text>
-            <Text layoutX="408.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart:" />
-            <Text layoutX="445.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
          </children>
       </Pane>
    </children>

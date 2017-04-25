@@ -21,7 +21,7 @@ public class Exchange extends Transaction {
 	        
 	       for (int i = 0; i < Inventory.inventory.size(); i++) {
 	            synchronized(Inventory.inventory) {
-	            if (Inventory.inventory.get(i).iD == itemTo.iD) {
+	            if (Inventory.inventory.get(i).code == itemTo.code) {
 	                Inventory.inventory.add(itemBack);
 	                Inventory.inventory.remove(i);
 	            }

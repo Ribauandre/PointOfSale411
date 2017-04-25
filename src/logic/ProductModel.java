@@ -4,15 +4,15 @@ public class ProductModel {
 String name;
 String productDesc; 
 double cost;
-double iD;
+double code;
 int quantity;
 
-	public ProductModel(String prodName, String prodD, double price, double code, int amountInv){
-		prodName = this.name;
-		prodD = this.productDesc;
-		price = this.cost;
-		code = this.iD;
-		amountInv = quantity;
+	public ProductModel(String prodName, String prodD, double price, double iD, int amountInv){
+		name = prodName;
+		productDesc = prodD;
+		cost = price;
+		code = iD;
+		quantity = amountInv;
 	}
 
 	public String getName() {
@@ -48,11 +48,11 @@ int quantity;
 	}
 
 	public double getiD() {
-		return iD;
+		return code;
 	}
 
 	public void setiD(double iD) {
-		this.iD = iD;
+		 iD = code;
 	}
 	
 	

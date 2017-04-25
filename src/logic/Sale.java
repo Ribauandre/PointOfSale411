@@ -24,7 +24,7 @@ public class Sale extends Transaction {
                 change = payment - Order.total;
                 for (int i = 0; i < ShoppingCart.cart.size(); i++) {
                     for (int j = 0; j < Inventory.inventory.size(); j++) {
-                        if (ShoppingCart.cart.get(i).iD == Inventory.inventory.get(j).iD) {
+                        if (ShoppingCart.cart.get(i).code == Inventory.inventory.get(j).code) {
                             Inventory.inventory.remove(j);
                         }
                     }
