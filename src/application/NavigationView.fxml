@@ -45,11 +45,11 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <items>
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="247.0" text="Add To Cart" />
+                  <Button mnemonicParsing="false" onAction="#addToCartClick" prefHeight="27.0" prefWidth="247.0" text="Add To Cart" />
                   <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="282.0" text="Checkout" />
                </items>
             </ToolBar>
-            <Text fill="#2cc90d" layoutX="461.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="67.2187470793724">
+            <Text fx:id="cartSize" fill="#2cc90d" layoutX="461.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="67.2187470793724">
                <font>
                   <Font size="18.0" />
                </font>
@@ -65,8 +65,7 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="183.0">
                      <children>
-                        <DialogPane fx:id="discrip" expanded="true" headerText="Product description:" layoutX="6.0" layoutY="8.0" prefHeight="253.0" prefWidth="360.0" />
-                        <DialogPane fx:id="stock" headerText="Stock:" layoutX="6.0" layoutY="267.0" />
+                        <DialogPane fx:id="discrip" expanded="true" headerText="Product description:" layoutX="6.0" layoutY="8.0" prefHeight="330.0" prefWidth="360.0" />
                      </children></AnchorPane>
               </items>
             </SplitPane>

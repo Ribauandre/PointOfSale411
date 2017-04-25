@@ -55,14 +55,16 @@ public class NavigationController implements Initializable{
 	public ListView<String> products;
 	@FXML
     private DialogPane discrip;
-	@FXML
-	private DialogPane stock;
+	boolean isClicked;
+
 	
 
 	public static Person loginP = new Person(LoginModel.name, LoginModel.last, LoginModel.user, LoginModel.pass);
 	
 	@FXML
 	public Text accountName;
+	@FXML
+	public Text cartSize;
    
 	
 	
@@ -70,11 +72,13 @@ public class NavigationController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
 		Inventory.popInv();
 		LoginModel.logPerson(LoginModel.user, LoginModel.pass);
 		loginP = new Person(LoginModel.name, LoginModel.last, LoginModel.user, LoginModel.pass );
 		name = loginP.firstName+" "+loginP.lastName;
 		accountName.setText(name);
+		
 		ObservableList<String> items =(ObservableList) FXCollections.observableArrayList ();
 			
 			for(int i = 0; i< Inventory.inventory.size(); i++){
@@ -91,17 +95,23 @@ public class NavigationController implements Initializable{
 			        	
 		
 			        	if(newValue.equals(Inventory.inventory.get(i).getName())){
+			        		double cost = Inventory.inventory.get(i).getCost();
 			        		String dis = Inventory.inventory.get(i).getProductDesc();
-			        		discrip.setContentText(dis);
-			        		if(Inventory.inventory.get(i).getQuantity() == 0 ){
-			        			stock.setContentText("OUT OF STOCK");
+			        		int stk = Inventory.inventory.get(i).getQuantity();
+			        		
+			        		if(Inventory.inventory.get(i).getQuantity() >0 ){
+			        			discrip.setContentText("Price: "+cost+"\n"+"Stock: "+stk+"\n"+dis);
 				
 			        		}
-			        		if(Inventory.inventory.get(i).getQuantity() > 0){
-			        			int stk = Inventory.inventory.get(i).getQuantity();
-			        			stock.setContentText(""+stk);
+			        		if(Inventory.inventory.get(i).getQuantity() <= 0){
+			        			
+			        			discrip.setContentText("Price: "+cost+"\n"+"Stock: "+"OUT OF STOCK"+"\n"+dis);
 			        		}
-			        		if(addToCartClick()){
+			        		
+							if(isClicked){
+			        			ShoppingCart.cart.add(Inventory.inventory.get(i));
+			        			cartSize.setText(""+ShoppingCart.cart.size());
+			        			isClicked = false;
 			        			
 			        		}
 			        			
@@ -126,9 +136,8 @@ public class NavigationController implements Initializable{
 	public void accountClick(){
 		Main.showAccount();
 	}
-	public boolean addToCartClick(){
-		boolean isClicked = false;
-		return isClicked = true;
+	public void addToCartClick(){
+		isClicked = true;
 	}
 
 
