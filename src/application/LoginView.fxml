@@ -15,7 +15,7 @@
    <children>
       <PasswordField fx:id="pass" accessibleRole="TEXT_FIELD" layoutX="108.0" layoutY="222.0" promptText="Password" />
       <TextField fx:id="user" layoutX="108.0" layoutY="187.0" promptText="User Name" />
-      <Text fill="#d3a93d" layoutX="71.0" layoutY="105.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="IST 411 POS" wrappingWidth="258.22314453125">
+      <Text fill="#d3a93d" layoutX="71.0" layoutY="104.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="IST 411 POS" wrappingWidth="258.22314453125">
          <font>
             <Font name="Damascus Semi Bold" size="37.0" />
          </font>
@@ -28,11 +28,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <ColorAdjust />
+            <ColorAdjust brightness="0.02" contrast="-0.02" hue="1.0" saturation="0.78" />
          </effect>
       </Button>
       <DialogPane fx:id="pleaseLog" contentText="Please login" layoutX="71.0" layoutY="121.0" prefHeight="57.0" prefWidth="167.0" />
-      <Text layoutX="322.0" layoutY="379.0" onMouseClicked="#handleCancle" strokeType="OUTSIDE" strokeWidth="0.0" text="Cancel">
+      <Text layoutX="169.0" layoutY="336.0" onMouseClicked="#handleCancle" strokeType="OUTSIDE" strokeWidth="0.0" text="Cancel">
          <font>
             <Font size="14.0" />
          </font>
@@ -40,7 +40,7 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Text>
-      <Text fill="#130cdd" layoutX="23.0" layoutY="371.0" onMouseClicked="#handleRegister" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
+      <Text layoutX="16.0" layoutY="28.0" onMouseClicked="#handleRegister" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
          <font>
             <Font size="14.0" />
          </font>

@@ -19,6 +19,6 @@
       <PasswordField fx:id="passField" layoutX="156.0" layoutY="142.0" prefHeight="27.0" prefWidth="292.0" />
       <PasswordField fx:id="veryPass" layoutX="156.0" layoutY="182.0" prefHeight="27.0" prefWidth="292.0" />
       <Button fx:id="registerButton" layoutX="72.0" layoutY="245.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="27.0" prefWidth="111.0" text="Register" />
-      <Button layoutX="302.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="27.0" prefWidth="111.0" text="Cancle" />
+      <Button layoutX="302.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="27.0" prefWidth="111.0" text="Cancel" />
    </children>
 </AnchorPane>
