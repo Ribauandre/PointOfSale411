@@ -93,12 +93,16 @@ public class NavigationController implements Initializable{
 			
 			
 			
+    			
+				
+    			
+    			
+    			
 			products.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			    @Override
 			    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+			    	
 			        for(int i =0; i< Inventory.inventory.size(); i++){
-			        	
-		
 			        	if(newValue.equals(Inventory.inventory.get(i).getName())){
 			        		double cost = Inventory.inventory.get(i).getCost();
 			        		String dis = Inventory.inventory.get(i).getProductDesc();
@@ -113,21 +117,7 @@ public class NavigationController implements Initializable{
 			        			discrip.setContentText("Price: "+cost+"\n"+"Stock: "+"OUT OF STOCK"+"\n"+dis);
 			        		}
 			        		
-							if(isClicked){
-			        			ShoppingCart.cart.add(Inventory.inventory.get(i));
-			        			try {
-			        				Thread.currentThread().sleep(100);
-			        				if(newValue.equals(Inventory.inventory.get(i).getName()))
-									cartSize.setText(""+ShoppingCart.cart.size());
-				        			isClicked = false;
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-			        			
-			        			
-			        			
-			        		}
+							
 			        			
 			        		
 			        
@@ -137,6 +127,7 @@ public class NavigationController implements Initializable{
 			        }
 			    }
 			});
+			
 
 		
 	}
@@ -154,7 +145,16 @@ public class NavigationController implements Initializable{
 		Main.showAccount();
 	}
 	public void addToCartClick(){
-		isClicked = true;
+		for(int i =0; i< Inventory.inventory.size(); i++){
+			if(products.getSelectionModel().getSelectedItem().equals(Inventory.inventory.get(i).getName())){
+			
+			ShoppingCart.cart.add(Inventory.inventory.get(i));
+			
+			cartSize.setText(""+ShoppingCart.cart.size());
+			
+			
+			}
+		}
 	}
 	public void checkoutClick(){
 		Main.showCheckout();
