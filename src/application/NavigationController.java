@@ -75,6 +75,9 @@ public class NavigationController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
+		cartSize.setText(""+ShoppingCart.cart.size());
+		Inventory.inventory.clear();
 		Inventory.popInv();
 		LoginModel.logPerson(LoginModel.user, LoginModel.pass);
 		loginP = new Person(LoginModel.name, LoginModel.last, LoginModel.user, LoginModel.pass );
@@ -83,12 +86,14 @@ public class NavigationController implements Initializable{
 		
 		
 		ObservableList<String> items =(ObservableList) FXCollections.observableArrayList ();
-			if(items.size()!=Inventory.inventory.size()){
-			for(int i = 0; i< Inventory.inventory.size(); i++){
+			
+			
+			if(items.size()==0){
+				for(int i = 0; i< Inventory.inventory.size(); i++){
 				items.add(Inventory.inventory.get(i).getName());
 				products.setItems(items);
 				
-			}
+				}
 			}
 			
 			
