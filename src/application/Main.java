@@ -47,8 +47,33 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+    public static void showCheckout() {
+        try {
+            
+        	 FXMLLoader loader = new FXMLLoader();
+             loader.setLocation(Main.class.getResource("CheckoutView.fxml"));
+             AnchorPane personOverview = (AnchorPane) loader.load();
+             rootLayout.setCenter(personOverview);
+             
+             
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+     }
     
-   
+    public static void showCart() {
+        try {
+            
+        	 FXMLLoader loader = new FXMLLoader();
+             loader.setLocation(Main.class.getResource("CartView.fxml"));
+             AnchorPane personOverview = (AnchorPane) loader.load();
+             rootLayout.setCenter(personOverview);
+             
+             
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+     }
     public static void showAccount() {
         try {
             

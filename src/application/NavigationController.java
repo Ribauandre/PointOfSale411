@@ -2,12 +2,14 @@ package application;
 
 import java.net.URL;
 import java.sql.PreparedStatement;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.mysql.jdbc.Connection;
 
 import logic.*;
+import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -65,6 +67,7 @@ public class NavigationController implements Initializable{
 	public Text accountName;
 	@FXML
 	public Text cartSize;
+	
    
 	
 	
@@ -72,22 +75,24 @@ public class NavigationController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
 		Inventory.popInv();
 		LoginModel.logPerson(LoginModel.user, LoginModel.pass);
 		loginP = new Person(LoginModel.name, LoginModel.last, LoginModel.user, LoginModel.pass );
 		name = loginP.firstName+" "+loginP.lastName;
 		accountName.setText(name);
 		
+		
 		ObservableList<String> items =(ObservableList) FXCollections.observableArrayList ();
-			
+			if(items.size()!=Inventory.inventory.size()){
 			for(int i = 0; i< Inventory.inventory.size(); i++){
 				items.add(Inventory.inventory.get(i).getName());
+				products.setItems(items);
 				
+			}
 			}
 			
 			
-			products.setItems(items);
+			
 			products.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			    @Override
 			    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -110,8 +115,17 @@ public class NavigationController implements Initializable{
 			        		
 							if(isClicked){
 			        			ShoppingCart.cart.add(Inventory.inventory.get(i));
-			        			cartSize.setText(""+ShoppingCart.cart.size());
-			        			isClicked = false;
+			        			try {
+			        				Thread.currentThread().sleep(100);
+			        				if(newValue.equals(Inventory.inventory.get(i).getName()))
+									cartSize.setText(""+ShoppingCart.cart.size());
+				        			isClicked = false;
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+			        			
+			        			
 			        			
 			        		}
 			        			
@@ -133,11 +147,17 @@ public class NavigationController implements Initializable{
 		Main.showPersonOverview();
 		
 	}
+	public void CartClick(){
+		Main.showCart();
+	}
 	public void accountClick(){
 		Main.showAccount();
 	}
 	public void addToCartClick(){
 		isClicked = true;
+	}
+	public void checkoutClick(){
+		Main.showCheckout();
 	}
 
 

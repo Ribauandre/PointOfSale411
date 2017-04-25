@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="300.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartController">
+   <children>
+      <AnchorPane prefHeight="300.0" prefWidth="323.0">
+         <children>
+            <Text layoutX="14.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart Total:" />
+            <Text fx:id="cartTotal" layoutX="90.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" />
+            <Button layoutX="8.0" layoutY="266.0" mnemonicParsing="false" text="Remove from cart" />
+            <Button layoutX="181.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="27.0" prefWidth="128.0" text="Back" />
+            <Button layoutX="8.0" layoutY="232.0" mnemonicParsing="false" onAction="#checkoutClick" prefHeight="27.0" prefWidth="299.0" text="Checkout" />
+            <ScrollPane layoutX="14.0" layoutY="7.0" prefHeight="200.0" prefWidth="299.0">
+               <content>
+                  <ListView fx:id="products" prefHeight="197.0" prefWidth="296.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -46,13 +46,16 @@
                </padding>
                <items>
                   <Button mnemonicParsing="false" onAction="#addToCartClick" prefHeight="27.0" prefWidth="247.0" text="Add To Cart" />
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="282.0" text="Checkout" />
+                  <Button mnemonicParsing="false" onAction="#checkoutClick" prefHeight="27.0" prefWidth="282.0" text="Checkout" />
                </items>
             </ToolBar>
-            <Text fx:id="cartSize" fill="#2cc90d" layoutX="461.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="67.2187470793724">
+            <Text fx:id="cartSize" fill="#2cc90d" layoutX="461.0" layoutY="44.0" onMouseClicked="#CartClick" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="67.2187470793724">
                <font>
                   <Font size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </Text>
             <Text layoutX="417.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" />
             <Accordion layoutX="14.0" layoutY="86.0" />
