@@ -70,11 +70,6 @@ public class NavigationController implements Initializable{
 		name = loginP.firstName+" "+loginP.lastName;
 		accountName.setText(name);
 	}
-		
-
-	
-	
-	
 	@FXML
 	public void handelLogout(){
 		loginP=null;
