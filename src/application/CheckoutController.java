@@ -36,9 +36,20 @@ public class CheckoutController implements Initializable{
 	}
 	@FXML
 	private void handlePlaceOrder() {
-		
-    	
-    }
+		for(int i = 0; i< ShoppingCart.cart.size(); i++){
+			int nStock = ShoppingCart.cart.get(i).getQuantity() - 1;
+			ShoppingCart.cart.get(i).setQuantity(nStock);
+			
+		}
+		for(int i = 0; i< ShoppingCart.cart.size(); i++){
+			
+			Order o1 = new Order(ShoppingCart.cart.get(i).getName(),ShoppingCart.cart.get(i).getQuantity());
+            Thread order = new Thread(o1);
+            order.start();
+			}
+		Main.showOrder();
+		}
+	
 	@FXML
 	private void handleCancel() {
     	Main.showNav();

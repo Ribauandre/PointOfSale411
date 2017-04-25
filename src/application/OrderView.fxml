@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="375.0" prefWidth="371.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="6.0" prefHeight="363.0" prefWidth="458.0">
+         <children>
+            <Text fill="#0dd70a" layoutX="26.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Order has been placed!" wrappingWidth="427.21875">
+               <font>
+                  <Font name="Optima Regular" size="32.0" />
+               </font>
+            </Text>
+            <Text layoutX="114.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you for useing our POS system." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

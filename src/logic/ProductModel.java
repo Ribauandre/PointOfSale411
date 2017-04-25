@@ -23,8 +23,8 @@ int quantity;
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setQuantity(int nQuantity) {
+		quantity = nQuantity;
 	}
 
 	public void setName(String name) {

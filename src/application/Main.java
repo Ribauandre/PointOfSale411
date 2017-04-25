@@ -47,6 +47,19 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+    public static void showOrder() {
+        try {
+            
+        	 FXMLLoader loader = new FXMLLoader();
+             loader.setLocation(Main.class.getResource("OrderView.fxml"));
+             AnchorPane personOverview = (AnchorPane) loader.load();
+             rootLayout.setCenter(personOverview);
+             
+             
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+     }
     public static void showCheckout() {
         try {
             
