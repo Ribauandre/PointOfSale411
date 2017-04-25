@@ -8,14 +8,14 @@ import Controller.Transaction;
 import application.Main;
 import application.NavigationController;
 
-public class  Order extends Transaction {
-	 static double total;
+public class  Order extends Transaction { // class dealing with a customer's order
+	 static double total; // declaring basic objects used to manage the order
 	 ProductModel product;
 	 String name;
 	 int stock;
 	 
 
-	    public Order(String nName, int nStock) {
+	    public Order(String nName, int nStock) { // constructor
 	    	stock = nStock;
 	    	name = nName;
 	    	
@@ -25,7 +25,7 @@ public class  Order extends Transaction {
 	    }
 
 	    @Override
-	    public synchronized void run() {
+	    public synchronized void run() { // run method for thread
 	    	 try
 	 		{  
 	    		
@@ -35,7 +35,7 @@ public class  Order extends Transaction {
 	 			   
 
 	 		      
-	 			PreparedStatement ps=(PreparedStatement) con.prepareStatement(query);
+	 			PreparedStatement ps=(PreparedStatement) con.prepareStatement(query); // allows for SQL command execution
 	 			ps.setInt(1, stock );  
 	 			ps.setString(2,name);
 	 			ps.execute();

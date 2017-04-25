@@ -21,7 +21,7 @@ public class Main extends Application {
     
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) { // starts the application, sets name of program
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("IST 411 POS");
  
@@ -32,27 +32,27 @@ public class Main extends Application {
     }
 
 
-    public void initRootLayout() {
+    public void initRootLayout() { // initializes root layout
         try {
            
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("RootLayout.fxml"));
+            FXMLLoader loader = new FXMLLoader(); // creates a loader object, used in every method to obtain appropriate XML data
+            loader.setLocation(Main.class.getResource("RootLayout.fxml")); 
             rootLayout = (BorderPane) loader.load();
 
            
-            Scene scene = new Scene(rootLayout);
+            Scene scene = new Scene(rootLayout); // creates scene based upon the rootlayout
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public static void showOrder() {
+    public static void showOrder() { // reveals the order the customer has made
         try {
             
         	 FXMLLoader loader = new FXMLLoader();
              loader.setLocation(Main.class.getResource("OrderView.fxml"));
-             AnchorPane personOverview = (AnchorPane) loader.load();
+             AnchorPane personOverview = (AnchorPane) loader.load(); // AnchorPane acts as a container for DialogStage
              rootLayout.setCenter(personOverview);
              
              
@@ -60,11 +60,11 @@ public class Main extends Application {
              e.printStackTrace();
          }
      }
-    public static void showCheckout() {
+    public static void showCheckout() { // reveals the checkout option for the customer
         try {
             
         	 FXMLLoader loader = new FXMLLoader();
-             loader.setLocation(Main.class.getResource("CheckoutView.fxml"));
+             loader.setLocation(Main.class.getResource("CheckoutView.fxml")); // from XML doc
              AnchorPane personOverview = (AnchorPane) loader.load();
              rootLayout.setCenter(personOverview);
              
@@ -74,11 +74,11 @@ public class Main extends Application {
          }
      }
     
-    public static void showCart() {
+    public static void showCart() { // reveals the items the customer has added
         try {
             
         	 FXMLLoader loader = new FXMLLoader();
-             loader.setLocation(Main.class.getResource("CartView.fxml"));
+             loader.setLocation(Main.class.getResource("CartView.fxml")); // obtains the cart from XML doc
              AnchorPane personOverview = (AnchorPane) loader.load();
              rootLayout.setCenter(personOverview);
              
@@ -87,11 +87,11 @@ public class Main extends Application {
              e.printStackTrace();
          }
      }
-    public static void showAccount() {
+    public static void showAccount() { // reveals the customer's account info
         try {
             
         	 FXMLLoader loader = new FXMLLoader();
-             loader.setLocation(Main.class.getResource("AccountView.fxml"));
+             loader.setLocation(Main.class.getResource("AccountView.fxml")); // obtained from XML doc
              AnchorPane personOverview = (AnchorPane) loader.load();
              rootLayout.setCenter(personOverview);
              
@@ -103,10 +103,10 @@ public class Main extends Application {
     
     
 
-    public static void showNav() {
+    public static void showNav() { // reveals navigation layout for user
         try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
+            
+        	FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("NavigationView.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
             rootLayout.setCenter(personOverview);
@@ -118,7 +118,7 @@ public class Main extends Application {
         }
 		
     }
-    public static void showPersonOverview() {
+    public static void showPersonOverview() { // loads person overview
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -126,8 +126,8 @@ public class Main extends Application {
             AnchorPane personOverview = (AnchorPane) loader.load();
 
 
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(personOverview);
+            // sets person overview into the center of root layout.
+            rootLayout.setCenter(personOverview); // sets person overview into the center of root layout
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -161,11 +161,11 @@ public class Main extends Application {
             return false;
         }
     }
-    public static Stage getPrimaryStage() {
+    public static Stage getPrimaryStage() { // getter for PrimaryStage
         return primaryStage;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // executes application
         launch(args);
         
     }

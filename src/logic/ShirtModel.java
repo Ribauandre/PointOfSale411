@@ -1,12 +1,12 @@
 package logic;
 
-public class ShirtModel extends ProductModel {
+public class ShirtModel extends ProductModel { // class to store getters and setters having to do with product
 
 	String shirtSize; 
 	String shirtDescription;
 	String shirtName;
 	
-	public ShirtModel(String prodName, String prodD, double price, double code, int amountInv) {
+	public ShirtModel(String prodName, String prodD, double price, double code, int amountInv) { // constructor 
 		super(prodName, prodD, price, code, amountInv);
 		
 		shirtName = prodName;
