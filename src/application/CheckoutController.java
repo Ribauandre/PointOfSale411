@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import logic.ShoppingCart;
+import logic.Exchange;
 import logic.Inventory;
 import logic.Order;
 import logic.ProductModel;
@@ -68,6 +69,21 @@ public class CheckoutController implements Initializable{
 		}
 		
 	//Main.showReturn(); 
+	}
+	
+	private void handleExchangeItem(){
+		for (int k = 0; k < ShoppingCart.cart.size(); k++){			
+			int returnItemAStock = ShoppingCart.cart.get(k).getQuantity() + 1;
+			int exchangeItemBStock = ShoppingCart.cart.get(k).getQuantity() -1; 
+		}
+		
+		for (int k = 0; k<ShoppingCart.cart.size(); k++){
+			ProductModel itemA;
+			ProductModel itemB; 
+	//	Exchange e1 = new Exchange(Inventory.inventory.add(itemA), Inventory.inventory.remove(itemB));
+			//Thread exchange = new Thread(e1);
+			//exchange.start();
+		}
 	}
 	
 	@FXML
