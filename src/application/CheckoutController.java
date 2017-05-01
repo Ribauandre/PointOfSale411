@@ -10,7 +10,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import logic.ShoppingCart;
+import logic.Inventory;
 import logic.Order;
+import logic.ProductModel;
+import logic.Return;
 
 public class CheckoutController implements Initializable{
 	
@@ -49,6 +52,23 @@ public class CheckoutController implements Initializable{
 			}
 		Main.showOrder();
 		}
+	
+	private void handleReturnItem(){
+		for(int j = 0; j< ShoppingCart.cart.size(); j++){
+			int returnStock = ShoppingCart.cart.get(j).getQuantity() + 1;
+			ShoppingCart.cart.get(j).setQuantity(returnStock);
+			
+		}
+		
+		for(int j = 0; j< ShoppingCart.cart.size(); j++){
+			Return r1 = new Return(ShoppingCart.cart.get(j),ShoppingCart.cart.get(j).getQuantity(),ShoppingCart.cart.get(j).getName());
+			Thread return1 = new Thread(r1);
+			return1.start();
+			
+		}
+		
+	//Main.showReturn(); 
+	}
 	
 	@FXML
 	private void handleCancel() {
