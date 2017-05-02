@@ -15,6 +15,7 @@ import logic.Inventory;
 import logic.Order;
 import logic.ProductModel;
 import logic.Return;
+import java.math.*;
 
 public class CheckoutController implements Initializable{ 
 	
@@ -40,8 +41,20 @@ public class CheckoutController implements Initializable{
 	}
 	@FXML
 	private void handlePlaceOrder() {
+		
 		for(int i = 0; i< ShoppingCart.cart.size(); i++){
-			int nStock = ShoppingCart.cart.get(i).getQuantity() - 1;
+			int nStock = ShoppingCart.cart.get(i).getQuantity();
+			if(ShoppingCart.cart.get(i).getCost() < 0){
+				double negID = -ShoppingCart.cart.get(i).getiD();
+				for(int j = 0; j< ShoppingCart.cart.size(); j++){
+					if(ShoppingCart.cart.get(j).getiD() == negID){
+						nStock = ShoppingCart.cart.get(j).getQuantity() + 1;
+					}
+				}
+			}
+			else{
+			nStock = ShoppingCart.cart.get(i).getQuantity() - 1;
+			}
 			ShoppingCart.cart.get(i).setQuantity(nStock);
 			
 		}
@@ -54,29 +67,7 @@ public class CheckoutController implements Initializable{
 		Main.showOrder();
 		}
 	
-	/*
-	@FXML
-	public void returnClick(){ // return 
-		Main.showReturn(); 
-	}
-	*/
-	
-	private void handleReturnItem(){
-		for(int j = 0; j< ShoppingCart.cart.size(); j++){
-			int returnStock = ShoppingCart.cart.get(j).getQuantity() + 1;
-			ShoppingCart.cart.get(j).setQuantity(returnStock);
-			
-		}
-		
-		for(int j = 0; j< ShoppingCart.cart.size(); j++){
-			Return r1 = new Return(ShoppingCart.cart.get(j),ShoppingCart.cart.get(j).getQuantity(),ShoppingCart.cart.get(j).getName());
-			Thread return1 = new Thread(r1);
-			return1.start();
-			
-		}
-		
-	//Main.showReturn(); 
-	}
+
 	
 	private void handleExchangeItem(){
 		for (int k = 0; k < ShoppingCart.cart.size(); k++){			

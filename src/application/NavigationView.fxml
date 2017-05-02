@@ -45,7 +45,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <items>
-                  <Button mnemonicParsing="false" prefWidth="165.0" text="Return" />
+                  <Button mnemonicParsing="false" onAction="#returnClick" prefWidth="165.0" text="Return" />
                   <Button mnemonicParsing="false" onAction="#addToCartClick" prefHeight="27.0" prefWidth="181.0" text="Add To Cart" />
                   <Button mnemonicParsing="false" onAction="#checkoutClick" prefHeight="27.0" prefWidth="181.0" text="Checkout" />
                </items>

@@ -161,6 +161,14 @@ public class NavigationController implements Initializable{
 			}
 		}
 	}
+	public void returnClick(){
+		for(int j = 0; j < Inventory.inventory.size(); j++){
+			if(products.getSelectionModel().getSelectedItem().equals(Inventory.inventory.get(j).getName())){
+				ProductModel returnProd = new ProductModel(Inventory.inventory.get(j).getName(), Inventory.inventory.get(j).getProductDesc(), (-Inventory.inventory.get(j).getCost()), (-Inventory.inventory.get(j).getiD()), Inventory.inventory.get(j).getQuantity());
+			ShoppingCart.cart.add(returnProd);
+			}
+		}
+	}
 	public void checkoutClick(){
 		Main.showCheckout();
 	}
