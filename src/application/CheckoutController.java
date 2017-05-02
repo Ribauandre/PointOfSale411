@@ -84,6 +84,8 @@ public class CheckoutController implements Initializable{
 		}
 	}
 	
+
+	
 	@FXML
 	private void handleCancel() {
     	Main.showNav();

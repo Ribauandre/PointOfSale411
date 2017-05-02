@@ -17,7 +17,7 @@ import logic.ShoppingCart;
 public class CartController implements Initializable {
 	
 	@FXML
-	public ListView<String> products;
+	public ListView<String> CartProducts;
 	@FXML
 	public Text cartTotal;
 	public double total;
@@ -32,8 +32,8 @@ public class CartController implements Initializable {
 			
 		}
 		cartTotal.setText(""+total);
-		products.setItems(items);
-		products.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+		CartProducts.setItems(items);
+		CartProducts.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 		    @Override
 		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 		        for(int i =0; i< ShoppingCart.cart.size(); i++){
@@ -52,10 +52,24 @@ public class CartController implements Initializable {
 		});
 		
 	}
+	
+	@FXML
+	public void removeClick(){
+		for(int i =0; i< ShoppingCart.cart.size(); i++){
+			if(CartProducts.getSelectionModel().getSelectedItem().contains(ShoppingCart.cart.get(i).getName())){
+			
+			ShoppingCart.cart.remove(i);
+			break;
+			
+			}
+		}
+		Main.showCart();
+	}
+	
 	@FXML
 	 private void handleCancel() {
 	    	Main.showNav();
-	    }
+	}
 	public void checkoutClick(){
 		Main.showCheckout();
 	}
