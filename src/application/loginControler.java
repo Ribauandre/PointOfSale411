@@ -29,9 +29,11 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-public class loginControler implements Initializable{
+
+
+public class loginControler implements Initializable{ // initializes the controller
 	@FXML
-    private TextField user;
+    private TextField user; // declaring javafx variables for GUI
     @FXML
     private TextField pass;
     @FXML
@@ -47,19 +49,19 @@ public class loginControler implements Initializable{
     
 	
 	@FXML
-	private void handleCancle() {
+	private void handleCancle() { // cancels application
 		System.exit(0);
 	}
 	
 	@FXML
-	private void handleLogin() {
-		String user1 = user.getText();
+	private void handleLogin() { // handles login of application
+		String user1 = user.getText(); // declaring login objects
 		String pass1 = pass.getText();
 		
 		
              
             
-		if (LoginModel.validate(user1, pass1)){
+		if (LoginModel.validate(user1, pass1)){ // checks if login credentials are correct, then logs user in
 			pleaseLog.setContentText("Login succesful!");
 			
 				
@@ -73,7 +75,7 @@ public class loginControler implements Initializable{
 		else{
 			
 			
-			Text text1=new Text("*invalid login");
+			Text text1=new Text("*invalid login"); // else prompts an invalid login message
 			text1.setStyle("-fx-fill: red;");
 			TextFlow flow = new TextFlow(text1);
 			pleaseLog.setContent(flow);
@@ -83,7 +85,7 @@ public class loginControler implements Initializable{
 		
 	}
 	@FXML
-	private void handleRegister() {
+	private void handleRegister() { // handles the registering of new users
 	        boolean okClicked = Main.showPersonEditDialog();
 	        if (okClicked) {
 	        	Main.showPersonEditDialog();

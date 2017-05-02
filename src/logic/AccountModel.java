@@ -2,16 +2,25 @@ package logic;
 
 public class AccountModel{
 	
-	String username; 
+	String username; // declaring string objects
 	String password; 
 	int accountID; 
 	
-	public void Account (String userN, String pwd, int acntID){
+	public void Account (String userN, String pwd, int acntID){ // constructor
 		username =userN;
 		password = pwd;
 		accountID = acntID; 
 	}
-	public String getUsername(){
+	
+	/*
+	 * 
+	 * 
+	 * getters and setters for account objects
+	 * 
+	 * 
+	 */
+		
+	public String getUsername(){ 
 		return username; 
 	}
 	
@@ -34,11 +43,8 @@ public class AccountModel{
 	public void setAccountIDs(int acntID){
 		this.accountID = acntID; 
 	}
-	public double setSpending(){
-		
-		
-		
-		
+	
+	public double setSpending(){	
 		return 0.00;
 	}
 }

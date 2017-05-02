@@ -3,8 +3,8 @@ package logic;
 import Controller.Transaction;
 import logic.Inventory;
 
-public class Exchange extends Transaction { // class allows for the exhange of products if needed
-	 ProductModel itemBack; // item to be exhanged
+public class Exchange extends Transaction { // class allows for the exchange of products if needed
+	 ProductModel itemBack; // item to be exchanged
 	   ProductModel itemTo; // item to be exchanged for
 	        
 	    

@@ -16,19 +16,19 @@ import logic.Order;
 import logic.ProductModel;
 import logic.Return;
 
-public class CheckoutController implements Initializable{
+public class CheckoutController implements Initializable{ 
 	
 	@FXML
-	public ListView<String> products;
+	public ListView<String> products; // declaring checkout objects
 	@FXML
 	public Text cartTotal;
 	public double total;
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location, ResourceBundle resources) { // method to override Initializable interface
 		ObservableList<String> items =(ObservableList) FXCollections.observableArrayList ();
 		
-		for(int i = 0; i< ShoppingCart.cart.size(); i++){
+		for(int i = 0; i< ShoppingCart.cart.size(); i++){ // for loop to go through the cart array list
 			items.add(ShoppingCart.cart.get(i).getName()+"   "+ShoppingCart.cart.get(i).getCost());
 			total = ShoppingCart.cart.get(i).getCost() + total;
 			
@@ -54,6 +54,12 @@ public class CheckoutController implements Initializable{
 		Main.showOrder();
 		}
 	
+	/*
+	@FXML
+	public void returnClick(){
+		Main.showReturn(); 
+	}
+	*/
 	private void handleReturnItem(){
 		for(int j = 0; j< ShoppingCart.cart.size(); j++){
 			int returnStock = ShoppingCart.cart.get(j).getQuantity() + 1;
