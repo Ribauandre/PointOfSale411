@@ -54,12 +54,12 @@ public class CheckoutController implements Initializable{
 		Main.showOrder();
 		}
 	
-	/*
+	
 	@FXML
-	public void returnClick(){
+	public void returnClick(){ // return 
 		Main.showReturn(); 
 	}
-	*/
+	
 	private void handleReturnItem(){
 		for(int j = 0; j< ShoppingCart.cart.size(); j++){
 			int returnStock = ShoppingCart.cart.get(j).getQuantity() + 1;
