@@ -31,7 +31,7 @@ public class CartController implements Initializable {
 			total = ShoppingCart.cart.get(i).getCost() + total;
 			
 		}
-		cartTotal.setText(""+total);
+		cartTotal.setText(""+Math.round(total*100.0)/100.0);
 		CartProducts.setItems(items);
 		CartProducts.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 		    @Override

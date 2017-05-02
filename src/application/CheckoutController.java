@@ -34,7 +34,7 @@ public class CheckoutController implements Initializable{
 			total = ShoppingCart.cart.get(i).getCost() + total;
 			
 		}
-		cartTotal.setText(""+total);
+		cartTotal.setText(""+Math.round(total*100.0)/100.0);
 		products.setItems(items);
 		
 		
