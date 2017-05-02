@@ -74,11 +74,12 @@ public class Main extends Application {
          }
      }
     
+    /*
     public static void showReturn() { // return
     	FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("CheckoutView.fxml")); 
     }
-    
+    */
     
     public static void showCart() { // reveals the items the customer has added
         try {
